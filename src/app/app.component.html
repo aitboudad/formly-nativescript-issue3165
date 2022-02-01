@@ -1,3 +1,10 @@
-<GridLayout>
-  <page-router-outlet></page-router-outlet>
+<GridLayout marginLeft="5" marginTop="20">
+  <FlexboxLayout flexDirection="column">
+    <Label class="h1 text-center m-15" [text]="'Hello World'"></Label>
+
+    <Label class="h5 text-center m-15"  textWrap="true" [text]="'Reproduction: clear and set a new value to F1 input which will trigger re-render F2 input (the order should not be changed)'"></Label>
+    <form [formGroup]="form" (ngSubmit)="onSubmit(model)">
+      <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+    </form>
+  </FlexboxLayout>
 </GridLayout>
